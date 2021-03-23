@@ -1612,7 +1612,11 @@
 # define _GL_ATTRIBUTE_CONST /* empty */
 #endif
 
-
+#if 201710L < __STDC_VERSION__
+# define _GL_ATTRIBUTE_FALLTHROUGH [[__fallthrough__]]
+#else
+# define _GL_ATTRIBUTE_FALLTHROUGH ((void) 0)
+#endif
 
 #define __libc_lock_t                   gl_lock_t
 #define __libc_lock_define              gl_lock_define
