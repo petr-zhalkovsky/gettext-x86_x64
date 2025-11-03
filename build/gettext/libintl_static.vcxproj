@@ -75,7 +75,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.;$(ProjectDir)..\..\gettext-runtime\intl;$(ProjectDir)..\..\..\libiconv\include;$(ProjectDir)..\..\gnulib\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;$(ProjectDir)..\..\..\gettext-runtime\intl;$(ProjectDir)..\..\..\libiconv\include;$(ProjectDir)..\..\..\gnulib\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>BUILDING_LIBINTL;IN_LIBINTL;ENABLE_RELOCATABLE=1;IN_LIBRARY;HAVE_CONFIG_H;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -99,7 +99,7 @@
     <ClCompile>
       <Optimization>Full</Optimization>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>.;$(ProjectDir)..\..\gettext-runtime\intl;$(ProjectDir)..\..\..\libiconv\include;$(ProjectDir)..\..\gnulib\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;$(ProjectDir)..\..\..\gettext-runtime\intl;$(ProjectDir)..\..\..\libiconv\include;$(ProjectDir)..\..\..\gnulib\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>BUILDING_LIBINTL;IN_LIBINTL;ENABLE_RELOCATABLE=1;IN_LIBRARY;HAVE_CONFIG_H;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader />
@@ -124,7 +124,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.;$(ProjectDir)..\..\gettext-runtime\intl;$(ProjectDir)..\..\..\libiconv\include;$(ProjectDir)..\..\gnulib\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;$(ProjectDir)..\..\..\gettext-runtime\intl;$(ProjectDir)..\..\..\libiconv\include;$(ProjectDir)..\..\..\gnulib\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>BUILDING_LIBINTL;IN_LIBINTL;ENABLE_RELOCATABLE=1;IN_LIBRARY;HAVE_CONFIG_H;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -152,7 +152,7 @@
     <ClCompile>
       <Optimization>Full</Optimization>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>.;$(ProjectDir)..\..\gettext-runtime\intl;$(ProjectDir)..\..\..\libiconv\include;$(ProjectDir)..\..\gnulib\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;$(ProjectDir)..\..\..\gettext-runtime\intl;$(ProjectDir)..\..\..\libiconv\include;$(ProjectDir)..\..\..\gnulib\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>BUILDING_LIBINTL;IN_LIBINTL;ENABLE_RELOCATABLE=1;IN_LIBRARY;HAVE_CONFIG_H;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader />
@@ -210,11 +210,6 @@
     <ClInclude Include="config.h" />
     <ClInclude Include="libgnuintl.h" />
     <ClInclude Include="plural.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Projects\libiconv\libiconv.vcxproj">
-      <Project>{1704ea01-6b21-4362-9f1f-44d25cf2e0d7}</Project>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
