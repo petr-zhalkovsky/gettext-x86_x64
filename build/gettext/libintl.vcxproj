@@ -76,7 +76,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.;$(ProjectDir)..\..\gettext-runtime\intl;$(ProjectDir)..\..\..\libiconv\include;$(ProjectDir)..\..\gnulib\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;$(ProjectDir)..\..\..\gettext-runtime\intl;$(ProjectDir)..\..\..\libiconv\include;$(ProjectDir)..\..\..\gnulib\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>BUILDING_LIBINTL;BUILDING_DLL;IN_LIBINTL;ENABLE_RELOCATABLE=1;IN_LIBRARY;HAVE_CONFIG_H;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -92,13 +92,15 @@
       <DataExecutionPrevention />
       <TargetMachine>MachineX86</TargetMachine>
       <ImportLibrary>$(OutDir)libintl.lib</ImportLibrary>
+      <AdditionalDependencies>libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\libiconv;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <Optimization>Full</Optimization>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>.;$(ProjectDir)..\..\gettext-runtime\intl;$(ProjectDir)..\..\..\libiconv\include;$(ProjectDir)..\..\gnulib\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;$(ProjectDir)..\..\..\gettext-runtime\intl;$(ProjectDir)..\..\..\libiconv\include;$(ProjectDir)..\..\..\gnulib\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>BUILDING_LIBINTL;BUILDING_DLL;IN_LIBINTL;ENABLE_RELOCATABLE=1;IN_LIBRARY;HAVE_CONFIG_H;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader />
@@ -114,6 +116,8 @@
       <DataExecutionPrevention />
       <TargetMachine>MachineX86</TargetMachine>
       <ImportLibrary>$(OutDir)libintl.lib</ImportLibrary>
+      <AdditionalDependencies>libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\libiconv;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -122,7 +126,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.;$(ProjectDir)..\..\gettext-runtime\intl;$(ProjectDir)..\..\..\libiconv\include;$(ProjectDir)..\..\gnulib\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;$(ProjectDir)..\..\..\gettext-runtime\intl;$(ProjectDir)..\..\..\libiconv\include;$(ProjectDir)..\..\..\gnulib\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>BUILDING_LIBINTL;BUILDING_DLL;IN_LIBINTL;ENABLE_RELOCATABLE=1;IN_LIBRARY;HAVE_CONFIG_H;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -139,6 +143,8 @@
       <TargetMachine>MachineX64</TargetMachine>
       <ProgramDatabaseFile>$(OutDir)libintl.pdb</ProgramDatabaseFile>
       <ImportLibrary>$(OutDir)libintl.lib</ImportLibrary>
+      <AdditionalDependencies>libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\libiconv;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -148,7 +154,7 @@
     <ClCompile>
       <Optimization>Full</Optimization>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>.;$(ProjectDir)..\..\gettext-runtime\intl;$(ProjectDir)..\..\..\libiconv\include;$(ProjectDir)..\..\gnulib\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;$(ProjectDir)..\..\..\gettext-runtime\intl;$(ProjectDir)..\..\..\libiconv\include;$(ProjectDir)..\..\..\gnulib\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>BUILDING_LIBINTL;BUILDING_DLL;IN_LIBINTL;ENABLE_RELOCATABLE=1;IN_LIBRARY;HAVE_CONFIG_H;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader />
@@ -164,40 +170,42 @@
       <DataExecutionPrevention />
       <TargetMachine>MachineX64</TargetMachine>
       <ImportLibrary>$(OutDir)libintl.lib</ImportLibrary>
+      <AdditionalDependencies>libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\libiconv;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\gettext-runtime\intl\windows-mutex.c" />
-    <ClCompile Include="..\..\gettext-runtime\intl\windows-recmutex.c" />
-    <ClCompile Include="..\..\gettext-runtime\intl\windows-rwlock.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\bindtextdom.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\dcgettext.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\dcigettext.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\dcngettext.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\dgettext.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\dngettext.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\explodename.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\finddomain.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\gettext.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\hash-string.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\intl-compat.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\l10nflist.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\langprefs.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\loadmsgcat.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\localcharset.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\localealias.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\localename.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\lock.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\log.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\ngettext.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\osdep.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\plural-exp.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\printf.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\relocatable.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\setlocale.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\textdomain.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\version.c" />
-    <ClCompile Include="E:\Projects\gettext\gettext-runtime\intl\xsize.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\windows-mutex.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\windows-recmutex.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\windows-rwlock.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\bindtextdom.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\dcgettext.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\dcigettext.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\dcngettext.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\dgettext.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\dngettext.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\explodename.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\finddomain.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\gettext.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\hash-string.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\intl-compat.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\l10nflist.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\langprefs.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\loadmsgcat.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\localcharset.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\localealias.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\localename.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\lock.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\log.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\ngettext.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\osdep.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\plural-exp.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\printf.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\relocatable.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\setlocale.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\textdomain.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\version.c" />
+    <ClCompile Include="..\..\..\gettext-runtime\intl\xsize.c" />
     <ClCompile Include="plural.c" />
   </ItemGroup>
   <ItemGroup>
